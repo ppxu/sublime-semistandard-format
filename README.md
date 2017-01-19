@@ -1,4 +1,5 @@
 # SemiStandard Format
+[![Build Status](https://travis-ci.org/ppxu/sublime-semistandard-format.svg?branch=master)](https://travis-ci.org/ppxu/sublime-semistandard-format)
 
 A Sublime Text 3 plug-in that runs [semistandard --fix](https://github.com/Flet/semistandard) against the javascript code in your ST3 window on save or manually.  Can be toggled on or off.  Includes a few settings that let you tweak your search path to favor local dependencies over global ones.
 
