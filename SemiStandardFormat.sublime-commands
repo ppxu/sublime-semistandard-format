@@ -1,0 +1,20 @@
+[
+    {
+      "caption": "SemiStandard Format: Format current file",
+      "command": "semistandard_format"
+    },
+    {
+      "caption": "SemiStandard Format: Toggle format on save",
+      "command": "toggle_semistandard_format"
+    },
+    {
+        "caption": "Preferences: SemiStandard Format Settings – Default",
+        "command": "open_file",
+        "args": {"file": "${packages}/SemiStandardFormat/SemiStandardFormat.sublime-settings"}
+    },
+    {
+        "caption": "Preferences: SemiStandard Format Settings - User",
+        "command": "open_file",
+        "args": {"file": "${packages}/User/SemiStandardFormat.sublime-settings"}
+    },
+]

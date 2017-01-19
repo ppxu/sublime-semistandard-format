@@ -1,19 +1,23 @@
-Standard Format
+SemiStandard Format
 ---------------
-This auto-formatter requires that you install `standard` in order to function properly:
+This auto-formatter requires that you install `semistandard` in order to function properly:
 
-  $ npm i standard -g
+  $ npm i semistandard -g
 
 Please file any issues with the plug-in you come across at:
 
-  https://github.com/bcomnes/sublime-standard-format/issues
+  https://github.com/ppxu/sublime-semistandard-format/issues
 
 Auto-formatting issues can be directed at:
 
   https://github.com/feross/standard/issues
 
+&
+
+  https://github.com/Flet/semistandard
+
 Please view the README for more information/documentation.
 
-Consider installing the `standard` linter plug-in:
+Consider installing the `semistandard` linter plug-in:
 
-  https://github.com/Flet/SublimeLinter-contrib-standard
+  https://github.com/Flet/SublimeLinter-contrib-semistandard

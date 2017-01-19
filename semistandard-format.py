@@ -6,7 +6,7 @@ import re
 import shutil
 # import inspect
 
-SETTINGS_FILE = "StandardFormat.sublime-settings"
+SETTINGS_FILE = "SemiStandardFormat.sublime-settings"
 
 # load settings
 settings = None
@@ -69,7 +69,7 @@ def generate_search_path(view):
     """
     search_path = settings.get("PATH")
     if not isinstance(search_path, list):
-        print("StandardFormat: PATH in settings does not appear to be an array")
+        print("SemiStandardFormat: PATH in settings does not appear to be an array")
         search_path = []
     if settings.get("use_view_path"):
         if view.file_name():
@@ -96,7 +96,7 @@ def get_command(commands):
 
 def print_status(global_path, search_path):
     command = get_command(settings.get("commands"))
-    print("StandardFormat:")
+    print("SemiStandardFormat:")
     print("  global_path: {}".format(global_path))
     print("  search_path: {}".format(search_path))
     if command:
@@ -124,12 +124,12 @@ def plugin_loaded():
     print_status(global_path, search_path)
 
 
-class StandardFormatEventListener(sublime_plugin.EventListener):
+class SemiStandardFormatEventListener(sublime_plugin.EventListener):
 
     def on_pre_save(self, view):
         if settings.get("format_on_save") and is_javascript(view):
             os.chdir(os.path.dirname(view.file_name()))
-            view.run_command("standard_format")
+            view.run_command("semistandard_format")
 
     def on_activated_async(self, view):
         search_path = generate_search_path(view)
@@ -154,7 +154,7 @@ def is_javascript(view):
     return False
 
 
-def standard_format(string, command):
+def semistandard_format(string, command):
     """
     Uses subprocess to format a given string.
     """
@@ -209,7 +209,7 @@ def command_version(command):
     return out.decode("utf-8").replace("\r", ""), err
 
 
-class StandardFormatCommand(sublime_plugin.TextCommand):
+class SemiStandardFormatCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
         # Figure out if the desired formatter is available
@@ -254,19 +254,19 @@ class StandardFormatCommand(sublime_plugin.TextCommand):
 
     def do_format(self, edit, region, view, command):
         s = view.substr(region)
-        s, err = standard_format(s, command)
+        s, err = semistandard_format(s, command)
         if not err and len(s) > 0:
             view.replace(edit, region, s)
         elif err:
             loud = settings.get("loud_error")
-            msg = 'StandardFormat: error formatting selection(s)'
+            msg = 'SemiStandardFormat: error formatting selection(s)'
             print(msg)
             if settings.get("log_errors"):
                 print(err)
             sublime.error_message(msg) if loud else sublime.status_message(msg)
 
 
-class ToggleStandardFormatCommand(sublime_plugin.TextCommand):
+class ToggleSemiStandardFormatCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
         if settings.get('format_on_save', False):

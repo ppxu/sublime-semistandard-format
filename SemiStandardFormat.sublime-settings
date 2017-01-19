@@ -15,7 +15,7 @@
     "extensions": ["js"],
 
     // An array of scopes for individual file extensions.
-    // If a selector for an extension exists, StandardFormat will pass
+    // If a selector for an extension exists, SemiStandardFormat will pass
     // the scope's content (rather than the whole file)
     // to whatever commands you specify.
     "selectors": {
@@ -29,7 +29,7 @@
     // The first command found in the search PATH is the one
     // that gets used.
     "commands": [
-        ["standard", "--stdin", "--fix"]
+        ["semistandard", "--stdin", "--fix"]
     ],
 
     // log error output
