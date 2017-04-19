@@ -1,11 +1,11 @@
 [
     {
       "caption": "SemiStandard Format: Format current file",
-      "command": "semistandard_format"
+      "command": "semi_standard_format"
     },
     {
       "caption": "SemiStandard Format: Toggle format on save",
-      "command": "toggle_semistandard_format"
+      "command": "toggle_semi_standard_format"
     },
     {
         "caption": "Preferences: SemiStandard Format Settings – Default",

@@ -129,7 +129,7 @@ class SemiStandardFormatEventListener(sublime_plugin.EventListener):
     def on_pre_save(self, view):
         if settings.get("format_on_save") and is_javascript(view):
             os.chdir(os.path.dirname(view.file_name()))
-            view.run_command("semistandard_format")
+            view.run_command("semi_standard_format")
 
     def on_activated_async(self, view):
         search_path = generate_search_path(view)
